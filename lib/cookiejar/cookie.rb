@@ -139,21 +139,21 @@ module CookieJar
 
     def to_hash
       result = {
-        name: @name,
-        value: @value,
-        domain: @domain,
-        path: @path,
-        created_at: @created_at
+        :name => @name,
+        :value => @value,
+        :domain => @domain,
+        :path => @path,
+        :created_at => @created_at
       }
       {
-        expiry: @expiry,
-        secure: (true if @secure),
-        http_only: (true if @http_only),
-        version: (@version if version != 0),
-        comment: @comment,
-        comment_url: @comment_url,
-        discard: (true if @discard),
-        ports: @ports
+        :expiry => @expiry,
+        :secure =>(true if @secure),
+        :http_only => (true if @http_only),
+        :version => (@version if version != 0),
+        :comment => @comment,
+        :comment_url => @comment_url,
+        :discard => (true if @discard),
+        :ports => @ports
       }.each do |name, value|
         result[name] = value if value
       end
